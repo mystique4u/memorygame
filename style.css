@@ -1,0 +1,142 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  #root, #__next {
+    isolation: isolate;
+  }
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#game header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'title title'
+                        'player1 player2';
+    gap:1rem;
+
+}
+
+#game h1 {
+    grid-area: title;
+}
+
+#player1 {
+    grid-area: player1;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1rem;
+}
+#player2 {
+    grid-area: player2;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1rem;
+}
+
+.activePlayer {
+    border: 3px solid #000;
+}
+
+#game main {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.3rem;
+}
+
+main {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: .4rem;
+    box-shadow: 1px 1px 18px #888;
+}
+#game main div {
+    min-width: 45px;
+    min-height: 45px;
+    background-color: #ff9685;
+    display: block;
+}
+
+main input {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: 1px solid #ccc;
+}
+
+main input[type="submit"]{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+    color: #fff;
+    font-weight: 600;
+    font-family: "Poetsen One", sans-serif;
+    font-size: 1.4rem;
+}
+
+
+h1 {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    font-size: 3rem;
+}
+
+footer {
+    color: #fff;
+    height: 3rem;
+    font-size: 0.8rem;
+}
+
+/* animation */
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
